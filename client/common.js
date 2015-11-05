@@ -1,12 +1,17 @@
+Meteor.subscribe("posts");
+Meteor.subscribe("ProfileImages");
+Meteor.subscribe("UserImages");
+
 Meteor.startup(function () {
-    AccountsEntry.config({        
+     AccountsEntry.config({        
       homeRoute: '/',            
-      dashboardRoute: '/'
+      dashboardRoute: '/',
       passwordSignupFields: 'USERNAME_AND_EMAIL'
     });
+
     Accounts.ui.config({
-        passwordSignupFields: 'USERNAME_AND_EMAIL'
-      });
+    	passwordSignupFields: 'USERNAME_AND_EMAIL'
+    });
   });
 
 Template.registerHelper('getProfileImg', function(userId){
